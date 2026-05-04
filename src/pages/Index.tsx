@@ -22,13 +22,13 @@ const Index = () => {
 
       <section className="relative min-h-screen flex items-center justify-center pt-24 pb-16 px-4 sm:px-6">
         <svg
-          className="absolute inset-0 w-full h-full pointer-events-none"
+          className="absolute inset-0 w-full h-full pointer-events-none z-0"
           viewBox="0 0 1600 1000"
           fill="none"
           aria-hidden="true"
-          preserveAspectRatio="xMidYMid slice"
+          preserveAspectRatio="none"
         >
-          <g opacity="0.05" stroke="hsl(var(--border))" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round">
+          <g opacity="0.085" stroke="hsl(var(--border))" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round" transform="translate(-20 -40) scale(1.08)">
             <path d="M120 410L270 260H520L620 180H1030L1130 250H1320L1470 390L1460 700L1320 845H1040L980 900H500L430 840H250L120 700Z" />
             <path d="M220 410L330 300H525L650 230H1005L1115 300H1270L1375 410L1368 675L1260 785H1025L945 845H550L470 785H330L220 690Z" />
             <path d="M660 230V845" />
@@ -60,7 +60,7 @@ const Index = () => {
             <path d="M740 310H870M740 340H870" />
           </g>
 
-          <g opacity="0.07" stroke="hsl(var(--primary))" strokeWidth="1" fill="none" strokeLinecap="round">
+          <g opacity="0.1" stroke="hsl(var(--primary))" strokeWidth="1" fill="none" strokeLinecap="round" transform="translate(-20 -40) scale(1.08)">
             <circle cx="812" cy="358" r="17" />
             <path d="M800 358H824M812 346V370" />
 
