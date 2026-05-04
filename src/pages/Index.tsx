@@ -28,9 +28,9 @@ const Index = () => {
           </div>
 
           <h1 className="font-display text-4xl sm:text-6xl md:text-7xl font-bold leading-[1.05] tracking-tight">
-            Play Among Us with{" "}
-            <span className="text-gradient">{cfg.streamerName}</span>
+            Play Among Us with
           </h1>
+          <HandWrittenTitle title={cfg.streamerName} subtitle="Random lobbies · One click away" />
 
           <p className="mt-6 text-base md:text-lg text-muted-foreground max-w-xl mx-auto">
             {cfg.bannerText} Random lobbies. One Discord click away.
