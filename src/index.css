@@ -89,13 +89,6 @@
     background: hsl(var(--card) / 0.8);
   }
 
-  .grid-bg {
-    background-image:
-      linear-gradient(hsl(var(--border)) 1px, transparent 1px),
-      linear-gradient(90deg, hsl(var(--border)) 1px, transparent 1px);
-    background-size: 60px 60px;
-    mask-image: radial-gradient(ellipse 70% 60% at 50% 30%, black, transparent 80%);
-  }
 }
 
 @keyframes float-slow {
@@ -152,7 +145,4 @@
     padding-right: 0.75rem;
   }
 
-  .grid-bg {
-    background-size: 44px 44px;
-  }
 }
