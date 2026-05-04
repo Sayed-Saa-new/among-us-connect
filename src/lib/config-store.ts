@@ -11,9 +11,9 @@ export type AppConfig = {
 const KEY = "amongus-hub-config";
 
 const defaults: AppConfig = {
-  streamerName: "ShadowCrew",
+  streamerName: "Sadik",
   bannerText: "Drop in. Vote sus. Win the round.",
-  discordUrl: "https://discord.gg/your-invite",
+  discordUrl: "https://discord.gg/kz3T7vzM",
   isLive: true,
   playersToday: 1247,
 };
