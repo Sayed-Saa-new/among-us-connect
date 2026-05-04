@@ -4,18 +4,16 @@ const StatusBadge = ({ live, className }: { live: boolean; className?: string })
   return (
     <div
       className={cn(
-        "inline-flex items-center gap-2.5 px-4 py-2 rounded-full glass text-sm font-semibold tracking-wide uppercase",
+        "inline-flex items-center gap-2 px-3 py-1.5 rounded-full surface text-xs font-medium",
         className
       )}
     >
-      <span
-        className={cn(
-          "w-2.5 h-2.5 rounded-full",
-          live ? "bg-accent animate-pulse-glow" : "bg-destructive animate-pulse-glow-red"
-        )}
-      />
-      <span className={live ? "text-accent" : "text-destructive"}>
-        {live ? "Game Live Now" : "Offline"}
+      <span className="relative flex h-2 w-2">
+        {live && <span className="absolute inline-flex h-full w-full rounded-full bg-accent opacity-60 animate-ping" />}
+        <span className={cn("relative inline-flex h-2 w-2 rounded-full", live ? "bg-accent" : "bg-muted-foreground")} />
+      </span>
+      <span className={live ? "text-foreground" : "text-muted-foreground"}>
+        {live ? "Live now" : "Offline"}
       </span>
     </div>
   );

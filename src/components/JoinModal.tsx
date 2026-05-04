@@ -4,6 +4,7 @@ import { Input } from "@/components/ui/input";
 import { useState } from "react";
 import { Copy, ExternalLink, Mic, LogIn, Gamepad2 } from "lucide-react";
 import { toast } from "sonner";
+import crewCyan from "@/assets/crewmate-cyan.png";
 
 type Props = {
   open: boolean;
@@ -12,9 +13,9 @@ type Props = {
 };
 
 const steps = [
-  { icon: LogIn, title: "Join the Discord", desc: "Click the invite link to enter the server." },
+  { icon: LogIn, title: "Join the Discord", desc: "Click the invite to enter the server." },
   { icon: Mic, title: "Hop in voice", desc: "Find the active Among Us voice channel." },
-  { icon: Gamepad2, title: "Start playing", desc: "Get the room code & dive into the game." },
+  { icon: Gamepad2, title: "Start playing", desc: "Get the room code and dive in." },
 ];
 
 const JoinModal = ({ open, onOpenChange, discordUrl }: Props) => {
@@ -22,9 +23,7 @@ const JoinModal = ({ open, onOpenChange, discordUrl }: Props) => {
 
   const handleJoin = () => {
     window.open(discordUrl, "_blank", "noopener,noreferrer");
-    toast.success(name ? `Good luck, ${name}!` : "Opening Discord…", {
-      description: "See you in the lobby, crewmate.",
-    });
+    toast.success(name ? `Good luck, ${name}!` : "Opening Discord");
   };
 
   const copyLink = async () => {
@@ -34,54 +33,49 @@ const JoinModal = ({ open, onOpenChange, discordUrl }: Props) => {
 
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
-      <DialogContent className="glass-card border-primary/30 max-w-lg p-0 overflow-hidden">
-        <div className="absolute inset-x-0 top-0 h-px bg-gradient-neon" />
+      <DialogContent className="surface max-w-lg p-0 overflow-hidden">
         <div className="p-7">
-          <DialogHeader>
-            <DialogTitle className="font-display text-2xl">
-              <span className="text-gradient-neon">Ready to Drop In?</span>
-            </DialogTitle>
-            <p className="text-muted-foreground text-base mt-1">
-              Three quick steps and you're in the lobby.
-            </p>
-          </DialogHeader>
+          <div className="flex items-center gap-3 mb-1">
+            <img src={crewCyan} alt="" width={40} height={40} className="w-10 h-10" />
+            <DialogHeader>
+              <DialogTitle className="font-display text-2xl">Ready to drop in?</DialogTitle>
+            </DialogHeader>
+          </div>
+          <p className="text-muted-foreground text-sm">Three quick steps and you're in the lobby.</p>
 
-          <div className="mt-6 space-y-3">
+          <div className="mt-6 space-y-2">
             {steps.map((s, i) => (
-              <div
-                key={i}
-                className="flex items-start gap-4 p-3.5 rounded-xl bg-muted/40 border border-border/50 hover:border-primary/40 transition-colors"
-              >
-                <div className="shrink-0 w-10 h-10 rounded-lg bg-gradient-primary flex items-center justify-center shadow-[0_0_20px_hsl(var(--primary)/0.4)]">
-                  <s.icon className="w-5 h-5 text-primary-foreground" />
+              <div key={i} className="flex items-start gap-3 p-3 rounded-lg bg-muted/40 border border-border">
+                <div className="shrink-0 w-8 h-8 rounded-md bg-primary/10 border border-primary/20 flex items-center justify-center">
+                  <s.icon className="w-4 h-4 text-primary" />
                 </div>
                 <div>
-                  <div className="font-semibold text-foreground">{s.title}</div>
-                  <div className="text-sm text-muted-foreground">{s.desc}</div>
+                  <div className="font-medium text-sm">{s.title}</div>
+                  <div className="text-xs text-muted-foreground">{s.desc}</div>
                 </div>
               </div>
             ))}
           </div>
 
-          <div className="mt-6 space-y-2">
-            <label className="text-xs uppercase tracking-wider text-muted-foreground font-semibold">
+          <div className="mt-5 space-y-1.5">
+            <label className="text-xs text-muted-foreground font-medium">
               Crewmate name <span className="opacity-60">(optional)</span>
             </label>
             <Input
               value={name}
               onChange={(e) => setName(e.target.value)}
               placeholder="e.g. RedSus"
-              className="bg-muted/50 border-border focus-visible:ring-primary"
+              className="bg-muted/50"
             />
           </div>
 
-          <div className="mt-6 flex gap-2">
+          <div className="mt-5 flex gap-2">
             <Button onClick={handleJoin} variant="hero" size="lg" className="flex-1">
-              <ExternalLink className="w-5 h-5" />
+              <ExternalLink className="w-4 h-4" />
               Join Discord
             </Button>
-            <Button onClick={copyLink} variant="outline" size="lg" className="border-primary/40 hover:bg-primary/10">
-              <Copy className="w-5 h-5" />
+            <Button onClick={copyLink} variant="neon" size="lg">
+              <Copy className="w-4 h-4" />
             </Button>
           </div>
         </div>
