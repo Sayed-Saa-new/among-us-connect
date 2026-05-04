@@ -17,49 +17,45 @@ export function HandWrittenTitle({
       pathLength: 1,
       opacity: 1,
       transition: {
-        pathLength: { duration: 2.5, ease: [0.43, 0.13, 0.23, 0.96] as [number, number, number, number] },
-        opacity: { duration: 0.5 },
+        pathLength: { duration: 1.2, delay: 0.8, ease: [0.43, 0.13, 0.23, 0.96] as [number, number, number, number] },
+        opacity: { duration: 0.3, delay: 0.8 },
       },
     },
   } as const;
 
   return (
     <div className="relative w-full max-w-4xl mx-auto py-16">
-      <div className="absolute inset-0">
-        <motion.svg
-          width="100%"
-          height="100%"
-          viewBox="0 0 1200 600"
-          initial="hidden"
-          animate="visible"
-          className="w-full h-full"
-        >
-          <title>Streamer</title>
-          <motion.path
-            d="M 950 90 
-               C 1250 300, 1050 480, 600 520
-               C 250 520, 150 480, 150 300
-               C 150 120, 350 80, 600 80
-               C 850 80, 950 180, 950 180"
-            fill="none"
-            strokeWidth="12"
-            stroke="currentColor"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            variants={draw}
-            className="text-primary opacity-90"
-          />
-        </motion.svg>
-      </div>
       <div className="relative text-center z-10 flex flex-col items-center justify-center">
-        <motion.h1
-          className="font-display text-4xl md:text-6xl text-foreground tracking-tighter flex items-center gap-2"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.5, duration: 0.8 }}
-        >
-          {title}
-        </motion.h1>
+        <div className="inline-flex flex-col items-stretch">
+          <motion.h1
+            className="font-display text-4xl md:text-6xl text-foreground tracking-tighter flex items-center gap-2"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.5, duration: 0.8 }}
+          >
+            {title}
+          </motion.h1>
+          <motion.svg
+            width="100%"
+            height="34"
+            viewBox="0 0 900 34"
+            initial="hidden"
+            animate="visible"
+            className="-mt-1 h-8 w-full text-primary"
+            preserveAspectRatio="none"
+          >
+            <title>Among Us style underline</title>
+            <motion.path
+              d="M 8 20 C 80 26, 130 8, 200 18 C 275 30, 340 8, 420 20 C 500 30, 575 10, 655 19 C 740 28, 810 12, 892 18"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="7"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              variants={draw}
+            />
+          </motion.svg>
+        </div>
         {subtitle && (
           <motion.p
             className="mt-3 text-lg md:text-xl text-muted-foreground"
