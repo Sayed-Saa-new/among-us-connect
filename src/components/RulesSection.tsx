@@ -47,7 +47,8 @@ const RulesSection = () => {
                     src={r.img}
                     alt=""
                     aria-hidden
-                    className="absolute -right-6 -bottom-6 w-48 h-48 object-contain opacity-30 group-hover:opacity-50 group-hover:scale-110 transition-all duration-500 pointer-events-none"
+                    style={{ filter: "drop-shadow(0 0 0 transparent)" }}
+                    className="absolute -right-6 -bottom-6 w-48 h-48 object-contain opacity-30 transition-all duration-500 pointer-events-none group-hover:opacity-80 group-hover:animate-crew-hover group-hover:[filter:drop-shadow(0_0_30px_hsl(var(--primary)/0.7))_drop-shadow(0_0_60px_hsl(var(--primary)/0.4))]"
                   />
                   {/* Tint gradient */}
                   <div className={`absolute inset-0 bg-gradient-to-br ${r.tint} via-transparent to-transparent pointer-events-none`} />
