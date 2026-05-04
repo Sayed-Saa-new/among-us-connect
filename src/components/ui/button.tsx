@@ -15,8 +15,8 @@ const buttonVariants = cva(
         secondary: "bg-secondary text-secondary-foreground hover:bg-secondary/80",
         ghost: "hover:bg-accent hover:text-accent-foreground",
         link: "text-primary underline-offset-4 hover:underline",
-        hero: "bg-primary text-primary-foreground font-semibold hover:bg-primary/90 shadow-md hover:shadow-lg transition-all",
-        neon: "bg-secondary text-foreground border border-border hover:border-primary/50 hover:bg-secondary/80 transition-all",
+        hero: "bg-primary text-primary-foreground font-semibold shadow-[inset_0_1px_0_hsl(0_0%_100%_/_0.25),inset_0_-2px_6px_hsl(240_10%_6%_/_0.35),0_8px_24px_hsl(250_85%_45%_/_0.35)] hover:bg-primary/90 hover:shadow-[inset_0_1px_0_hsl(0_0%_100%_/_0.2),inset_0_-2px_8px_hsl(240_10%_6%_/_0.45),0_12px_28px_hsl(250_85%_45%_/_0.45)] transition-all",
+        neon: "bg-secondary text-foreground border border-border shadow-[inset_0_1px_0_hsl(0_0%_100%_/_0.12),inset_0_-3px_8px_hsl(240_10%_6%_/_0.5)] hover:border-primary/50 hover:bg-secondary/80 hover:shadow-[inset_0_1px_0_hsl(0_0%_100%_/_0.18),inset_0_-4px_10px_hsl(240_10%_6%_/_0.6),0_8px_20px_hsl(250_85%_45%_/_0.25)] transition-all",
       },
       size: {
         default: "h-10 px-4 py-2",

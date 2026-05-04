@@ -13,10 +13,12 @@ import { useConfig } from "@/lib/config-store";
 const Index = () => {
   const [cfg] = useConfig();
   const [open, setOpen] = useState(false);
+  const streamerName = "Sadik";
+  const discordUrl = "https://discord.gg/kz3T7vzM";
 
   return (
     <div className="min-h-screen bg-background text-foreground relative overflow-x-hidden" style={{ background: "var(--gradient-bg)" }}>
-      <Header streamerName={cfg.streamerName} />
+      <Header />
 
       <section className="relative min-h-screen flex items-center justify-center pt-24 pb-16 px-6">
         <div className="absolute inset-0 grid-bg pointer-events-none" />
@@ -30,7 +32,7 @@ const Index = () => {
           <h1 className="font-display text-4xl sm:text-6xl md:text-7xl font-bold leading-[1.05] tracking-tight">
             Play Among Us with
           </h1>
-          <HandWrittenTitle title={cfg.streamerName} subtitle="Random lobbies · One click away" />
+          <HandWrittenTitle title={streamerName} subtitle="Random lobbies · One click away" />
 
           <p className="mt-6 text-base md:text-lg text-muted-foreground max-w-xl mx-auto">
             {cfg.bannerText} Random lobbies. One Discord click away.
@@ -60,11 +62,35 @@ const Index = () => {
 
       <RulesSection />
 
-      <footer className="border-t border-border py-8 px-6 text-center text-sm text-muted-foreground">
-        <p>© {new Date().getFullYear()} {cfg.streamerName}.hub · Not affiliated with InnerSloth.</p>
+      <footer className="border-t border-border py-8 px-6 text-center text-sm text-muted-foreground space-y-2">
+        <p>© {new Date().getFullYear()} {streamerName}.hub · All rights reserved.</p>
+        <p>
+          Powered by{" "}
+          <a
+            href="https://flinkeo.online"
+            target="_blank"
+            rel="noreferrer"
+            className="text-foreground hover:text-primary transition-colors font-semibold"
+          >
+            Flinkeo.online
+          </a>
+          .
+        </p>
+        <p>
+          Developed by{" "}
+          <a
+            href="https://portfolio.flinkeo.online"
+            target="_blank"
+            rel="noreferrer"
+            className="text-foreground hover:text-primary transition-colors font-semibold"
+          >
+            Abushaid Islam Sayd
+          </a>
+          .
+        </p>
       </footer>
 
-      <JoinModal open={open} onOpenChange={setOpen} discordUrl={cfg.discordUrl} />
+      <JoinModal open={open} onOpenChange={setOpen} discordUrl={discordUrl} />
     </div>
   );
 };
