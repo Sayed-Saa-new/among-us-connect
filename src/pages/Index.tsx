@@ -1,12 +1,12 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Zap } from "lucide-react";
-import ParticleField from "@/components/ParticleField";
+import { ArrowRight } from "lucide-react";
 import StatusBadge from "@/components/StatusBadge";
 import StatsRow from "@/components/StatsRow";
 import JoinModal from "@/components/JoinModal";
 import RulesSection from "@/components/RulesSection";
 import Header from "@/components/Header";
+import FloatingCrewmates from "@/components/FloatingCrewmates";
 import { useConfig } from "@/lib/config-store";
 
 const Index = () => {
@@ -14,61 +14,53 @@ const Index = () => {
   const [open, setOpen] = useState(false);
 
   return (
-    <div className="min-h-screen bg-gradient-hero text-foreground relative overflow-x-hidden">
+    <div className="min-h-screen bg-background text-foreground relative overflow-x-hidden" style={{ background: "var(--gradient-bg)" }}>
       <Header streamerName={cfg.streamerName} />
 
-      {/* HERO */}
       <section className="relative min-h-screen flex items-center justify-center pt-24 pb-16 px-6">
-        <ParticleField />
+        <div className="absolute inset-0 grid-bg pointer-events-none" />
+        <FloatingCrewmates />
 
-        <div className="relative z-10 container max-w-5xl text-center">
-          <div className="animate-fade-in-down flex justify-center mb-6">
+        <div className="relative z-10 container max-w-4xl text-center">
+          <div className="flex justify-center mb-6">
             <StatusBadge live={cfg.isLive} />
           </div>
 
-          <h1 className="font-display text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-black leading-[1.05] tracking-tight animate-fade-in">
-            <span className="block text-foreground">Play Among Us</span>
-            <span className="block mt-2 text-gradient-neon drop-shadow-[0_0_30px_hsl(var(--primary)/0.5)]">
-              with {cfg.streamerName}
-            </span>
+          <h1 className="font-display text-4xl sm:text-6xl md:text-7xl font-bold leading-[1.05] tracking-tight">
+            Play Among Us with{" "}
+            <span className="text-gradient">{cfg.streamerName}</span>
           </h1>
 
-          <p className="mt-7 text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto animate-fade-in" style={{ animationDelay: "120ms" }}>
-            {cfg.bannerText} Random lobbies. Real chaos. One Discord click away.
+          <p className="mt-6 text-base md:text-lg text-muted-foreground max-w-xl mx-auto">
+            {cfg.bannerText} Random lobbies. One Discord click away.
           </p>
 
-          <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4 animate-fade-in" style={{ animationDelay: "220ms" }}>
+          <div className="mt-9 flex flex-col sm:flex-row items-center justify-center gap-3">
             <Button
-              size="xl"
+              size="lg"
               variant="hero"
               onClick={() => setOpen(true)}
               disabled={!cfg.isLive}
               className="group"
             >
-              <Zap className="w-5 h-5" />
-              {cfg.isLive ? "Join Game Now" : "Lobby Offline"}
-              <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+              {cfg.isLive ? "Join game now" : "Lobby offline"}
+              <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
             </Button>
-            <Button asChild size="xl" variant="neon">
-              <a href="#rules">Read the Rules</a>
+            <Button asChild size="lg" variant="neon">
+              <a href="#rules">Read the rules</a>
             </Button>
           </div>
 
-          <div className="mt-16 animate-fade-in" style={{ animationDelay: "320ms" }}>
+          <div className="mt-16">
             <StatsRow playersToday={cfg.playersToday} />
           </div>
         </div>
-
-        {/* fade gradient */}
-        <div className="absolute bottom-0 inset-x-0 h-32 bg-gradient-to-b from-transparent to-background pointer-events-none" />
       </section>
 
       <RulesSection />
 
-      <footer className="border-t border-border/40 py-8 px-6 text-center text-sm text-muted-foreground">
-        <p>
-          © {new Date().getFullYear()} {cfg.streamerName}.HUB · Not affiliated with InnerSloth.
-        </p>
+      <footer className="border-t border-border py-8 px-6 text-center text-sm text-muted-foreground">
+        <p>© {new Date().getFullYear()} {cfg.streamerName}.hub · Not affiliated with InnerSloth.</p>
       </footer>
 
       <JoinModal open={open} onOpenChange={setOpen} discordUrl={cfg.discordUrl} />
