@@ -36,7 +36,7 @@ const JoinModal = ({ open, onOpenChange, discordUrl }: Props) => {
       <DialogContent className="surface max-w-lg p-0 overflow-hidden">
         <div className="p-7">
           <div className="flex items-center gap-3 mb-1">
-            <img src={crewCyan} alt="" width={40} height={40} className="w-10 h-10" />
+            <img src={crewCyan} alt="" width={40} height={40} className="w-10 h-10 max-w-full h-auto" />
             <DialogHeader>
               <DialogTitle className="font-display text-2xl">Ready to drop in?</DialogTitle>
             </DialogHeader>

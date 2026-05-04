@@ -20,7 +20,7 @@ const Index = () => {
     <div className="min-h-screen bg-background text-foreground relative overflow-x-hidden" style={{ background: "var(--gradient-bg)" }}>
       <Header />
 
-      <section className="relative min-h-screen flex items-center justify-center pt-24 pb-16 px-6">
+      <section className="relative min-h-screen flex items-center justify-center pt-24 pb-16 px-4 sm:px-6">
         <div className="absolute inset-0 grid-bg pointer-events-none" />
         <FloatingCrewmates />
 
@@ -38,18 +38,18 @@ const Index = () => {
             {cfg.bannerText} Random lobbies. One Discord click away.
           </p>
 
-          <div className="mt-9 flex flex-col sm:flex-row items-center justify-center gap-3">
+          <div className="mt-9 flex flex-col sm:flex-row items-stretch sm:items-center justify-center gap-3 w-full max-w-md sm:max-w-none mx-auto">
             <Button
               size="lg"
               variant="hero"
               onClick={() => setOpen(true)}
               disabled={!cfg.isLive}
-              className="group"
+              className="group w-full sm:w-auto"
             >
               {cfg.isLive ? "Join game now" : "Lobby offline"}
               <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
             </Button>
-            <Button asChild size="lg" variant="neon">
+            <Button asChild size="lg" variant="neon" className="w-full sm:w-auto">
               <a href="#rules">Read the rules</a>
             </Button>
           </div>
@@ -62,7 +62,7 @@ const Index = () => {
 
       <RulesSection />
 
-      <footer className="border-t border-border py-8 px-6 text-center text-sm text-muted-foreground space-y-2">
+      <footer className="border-t border-border py-8 px-4 sm:px-6 text-center text-sm text-muted-foreground space-y-2">
         <p>© 2026 Flinkeo · All rights reserved.</p>
         <p>
           Powered by{" "}

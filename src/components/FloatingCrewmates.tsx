@@ -28,7 +28,7 @@ const FloatingCrewmates = () => {
             height={it.size}
             loading="lazy"
             style={{
-              width: it.size, height: it.size,
+              width: it.size, height: it.size, maxWidth: "100%",
               transform: `rotate(${it.rotate}deg)`,
               filter: "drop-shadow(0 20px 30px hsl(250 85% 30% / 0.4))",
             }}
