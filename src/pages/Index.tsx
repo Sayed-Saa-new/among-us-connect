@@ -63,7 +63,7 @@ const Index = () => {
       <RulesSection />
 
       <footer className="border-t border-border py-8 px-6 text-center text-sm text-muted-foreground space-y-2">
-        <p>© {new Date().getFullYear()} {streamerName}.hub · All rights reserved.</p>
+        <p>© 2026 Flinkeo · All rights reserved.</p>
         <p>
           Powered by{" "}
           <a
