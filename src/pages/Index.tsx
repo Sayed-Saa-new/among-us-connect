@@ -7,6 +7,7 @@ import JoinModal from "@/components/JoinModal";
 import RulesSection from "@/components/RulesSection";
 import Header from "@/components/Header";
 import FloatingCrewmates from "@/components/FloatingCrewmates";
+import { HandWrittenTitle } from "@/components/HandWrittenTitle";
 import { useConfig } from "@/lib/config-store";
 
 const Index = () => {
