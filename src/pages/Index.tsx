@@ -24,21 +24,21 @@ const Index = () => {
       <section className="relative min-h-screen flex items-center justify-center pt-24 pb-16 px-4 sm:px-6">
         {/* Among Us map background */}
         <div
-          className="absolute inset-0 pointer-events-none flex items-center justify-center"
+          className="absolute inset-0 pointer-events-none flex items-center justify-center overflow-hidden"
           aria-hidden
         >
           <img
             src={amongUsMap}
             alt=""
-            className="w-[110%] max-w-none object-contain opacity-40 animate-float-slower"
+            className="w-[180%] sm:w-[140%] md:w-[110%] lg:w-[95%] max-w-none object-contain opacity-60 sm:opacity-70 md:opacity-80 animate-float-slower"
             style={{
               filter:
-                "invert(1) sepia(1) saturate(6) hue-rotate(220deg) brightness(1.1) drop-shadow(0 0 50px hsl(var(--primary) / 0.7))",
+                "invert(1) sepia(1) saturate(8) hue-rotate(220deg) brightness(1.4) contrast(1.6)",
             }}
           />
         </div>
         {/* Soft radial vignette */}
-        <div className="absolute inset-0 pointer-events-none bg-[radial-gradient(ellipse_70%_60%_at_50%_45%,transparent,hsl(var(--background))_92%)]" />
+        <div className="absolute inset-0 pointer-events-none bg-[radial-gradient(ellipse_75%_65%_at_50%_45%,transparent,hsl(var(--background))_95%)]" />
         <FloatingCrewmates />
 
         <div className="relative z-10 container max-w-4xl text-center">
