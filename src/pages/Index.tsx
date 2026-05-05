@@ -84,33 +84,7 @@ const Index = () => {
 
       <RulesSection />
 
-      <footer className="border-t border-border py-8 px-4 sm:px-6 text-center text-sm text-muted-foreground space-y-2">
-        <p>© 2026 Flinkeo · All rights reserved.</p>
-        <p>
-          Powered by{" "}
-          <a
-            href="https://flinkeo.online"
-            target="_blank"
-            rel="noreferrer"
-            className="text-foreground hover:text-primary transition-colors font-semibold"
-          >
-            Flinkeo.online
-          </a>
-          .
-        </p>
-        <p>
-          Developed by{" "}
-          <a
-            href="https://portfolio.flinkeo.online"
-            target="_blank"
-            rel="noreferrer"
-            className="text-foreground hover:text-primary transition-colors font-semibold"
-          >
-            Abushaid Islam Sayd
-          </a>
-          .
-        </p>
-      </footer>
+      <Footer discordUrl={discordUrl} />
 
       <JoinModal open={open} onOpenChange={setOpen} discordUrl={discordUrl} />
     </div>
