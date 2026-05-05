@@ -9,6 +9,7 @@ import Header from "@/components/Header";
 import FloatingCrewmates from "@/components/FloatingCrewmates";
 import { HandWrittenTitle } from "@/components/HandWrittenTitle";
 import { useConfig } from "@/lib/config-store";
+import amongUsMap from "@/assets/among-us-map.png";
 
 const Index = () => {
   const [cfg] = useConfig();
