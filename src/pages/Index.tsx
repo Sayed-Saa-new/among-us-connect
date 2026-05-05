@@ -22,7 +22,19 @@ const Index = () => {
       <Header />
 
       <section className="relative min-h-screen flex items-center justify-center pt-24 pb-16 px-4 sm:px-6">
-        <div className="absolute inset-0 grid-bg pointer-events-none" />
+        {/* Among Us map background */}
+        <div
+          className="absolute inset-0 pointer-events-none flex items-center justify-center opacity-[0.07] mix-blend-screen"
+          aria-hidden
+        >
+          <img
+            src={amongUsMap}
+            alt=""
+            className="w-[120%] max-w-none object-contain animate-float-slower [filter:drop-shadow(0_0_60px_hsl(var(--primary)/0.5))]"
+          />
+        </div>
+        {/* Soft radial vignette */}
+        <div className="absolute inset-0 pointer-events-none bg-[radial-gradient(ellipse_60%_50%_at_50%_40%,transparent,hsl(var(--background))_85%)]" />
         <FloatingCrewmates />
 
         <div className="relative z-10 container max-w-4xl text-center">
