@@ -1,11 +1,12 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Sparkles } from "lucide-react";
 import StatusBadge from "@/components/StatusBadge";
 import StatsRow from "@/components/StatsRow";
 import JoinModal from "@/components/JoinModal";
 import RulesSection from "@/components/RulesSection";
 import Header from "@/components/Header";
+import Footer from "@/components/Footer";
 import FloatingCrewmates from "@/components/FloatingCrewmates";
 import { HandWrittenTitle } from "@/components/HandWrittenTitle";
 import { useConfig } from "@/lib/config-store";
@@ -45,12 +46,17 @@ const Index = () => {
             <StatusBadge live={cfg.isLive} />
           </div>
 
+          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full surface text-[11px] font-medium text-muted-foreground mb-4">
+            <Sparkles className="w-3 h-3 text-primary" />
+            <span className="uppercase tracking-wider">Live matchmaking hub</span>
+          </div>
+
           <h1 className="font-display text-4xl sm:text-6xl md:text-7xl font-bold leading-[1.05] tracking-tight">
             Play Among Us with
           </h1>
           <HandWrittenTitle title={streamerName} subtitle="Random lobbies · One click away" />
 
-          <p className="mt-6 text-base md:text-lg text-muted-foreground max-w-xl mx-auto">
+          <p className="-mt-4 sm:-mt-2 text-base md:text-lg text-muted-foreground max-w-xl mx-auto">
             {cfg.bannerText} Random lobbies. One Discord click away.
           </p>
 
@@ -78,33 +84,7 @@ const Index = () => {
 
       <RulesSection />
 
-      <footer className="border-t border-border py-8 px-4 sm:px-6 text-center text-sm text-muted-foreground space-y-2">
-        <p>© 2026 Flinkeo · All rights reserved.</p>
-        <p>
-          Powered by{" "}
-          <a
-            href="https://flinkeo.online"
-            target="_blank"
-            rel="noreferrer"
-            className="text-foreground hover:text-primary transition-colors font-semibold"
-          >
-            Flinkeo.online
-          </a>
-          .
-        </p>
-        <p>
-          Developed by{" "}
-          <a
-            href="https://portfolio.flinkeo.online"
-            target="_blank"
-            rel="noreferrer"
-            className="text-foreground hover:text-primary transition-colors font-semibold"
-          >
-            Abushaid Islam Sayd
-          </a>
-          .
-        </p>
-      </footer>
+      <Footer discordUrl={discordUrl} />
 
       <JoinModal open={open} onOpenChange={setOpen} discordUrl={discordUrl} />
     </div>
