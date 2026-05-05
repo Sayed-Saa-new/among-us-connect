@@ -1,11 +1,12 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Sparkles } from "lucide-react";
 import StatusBadge from "@/components/StatusBadge";
 import StatsRow from "@/components/StatsRow";
 import JoinModal from "@/components/JoinModal";
 import RulesSection from "@/components/RulesSection";
 import Header from "@/components/Header";
+import Footer from "@/components/Footer";
 import FloatingCrewmates from "@/components/FloatingCrewmates";
 import { HandWrittenTitle } from "@/components/HandWrittenTitle";
 import { useConfig } from "@/lib/config-store";
