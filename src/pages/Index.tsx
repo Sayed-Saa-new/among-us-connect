@@ -46,17 +46,17 @@ const Index = () => {
             <StatusBadge live={cfg.isLive} />
           </div>
 
-          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full surface text-[11px] font-medium text-muted-foreground mb-4">
+          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full surface text-[11px] font-semibold text-muted-foreground mb-5">
             <Sparkles className="w-3 h-3 text-primary" />
-            <span className="uppercase tracking-wider">Live matchmaking hub</span>
+            <span className="uppercase tracking-[0.14em]">Live matchmaking hub</span>
           </div>
 
-          <h1 className="font-display text-4xl sm:text-6xl md:text-7xl font-bold leading-[1.05] tracking-tight">
+          <h1 className="font-display text-[2.5rem] sm:text-6xl md:text-7xl font-extrabold leading-[1.05] tracking-[-0.03em] text-balance">
             Play Among Us with
           </h1>
           <HandWrittenTitle title={streamerName} subtitle="Random lobbies · One click away" />
 
-          <p className="-mt-4 sm:-mt-2 text-base md:text-lg text-muted-foreground max-w-xl mx-auto">
+          <p className="-mt-2 text-base sm:text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed text-balance">
             {cfg.bannerText} Random lobbies. One Discord click away.
           </p>
 
