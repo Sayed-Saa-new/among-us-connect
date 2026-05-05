@@ -30,10 +30,9 @@ const Index = () => {
           <img
             src={amongUsMap}
             alt=""
-            className="w-[180%] sm:w-[140%] md:w-[110%] lg:w-[95%] max-w-none object-contain opacity-60 sm:opacity-70 md:opacity-80 animate-float-slower"
+            className="w-[180%] sm:w-[140%] md:w-[110%] lg:w-[95%] max-w-none object-contain opacity-25 sm:opacity-20 md:opacity-15"
             style={{
-              filter:
-                "invert(1) sepia(1) saturate(8) hue-rotate(220deg) brightness(1.4) contrast(1.6)",
+              filter: "invert(1) brightness(2) contrast(1.4)",
             }}
           />
         </div>
